@@ -24,7 +24,7 @@ def readme():
 			for file in filename_list:
 				r = os.path.join(root, file)
 				print(r)
-				f.write(f"[{file}]({r})\n")
+				f.write(f"[{file}]({r})\n\n")
 	# with open()
 
 if __name__ == "__main__":
