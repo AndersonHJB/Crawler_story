@@ -93,11 +93,13 @@ def main():
 		save(str(i) + "\n", "data/story_information{}.txt".format(story_title))
 	r = parse_detail_content(content)
 	for index, i in enumerate(r):
-		print(i)
+		# print(i)
 		content_old = i.get("content_text", "default_content")
 		content = content_old.split("。")
+		page_title = i.get('detail_content_title', 'default_name').replace(" ", "")
 		for con in content:
-			save(con + "。\n", f"data/content/{f'{index+1}' + i.get('detail_content_title', 'default_name')}.md")
+			# save(con + "。\n", f"data/content/{f'{index+1}' + i.get('detail_content_title', 'default_name')}.md")
+			save(con + "。\n", f"data/content/{index+1}{page_title}.md")
 
 if __name__ == '__main__':
 	# 快速优化、快速熟悉代码
