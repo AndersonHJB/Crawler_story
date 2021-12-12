@@ -16,6 +16,7 @@ def readme():
 	path = os.walk("./data/content/")
 	# print(list(r))
 	with open("README.md", "w+", encoding="utf-8") as f:
+		f.write("# 大主宰\n")
 		for root, file, filename_list in path:
 			# pprint(i)
 			# print(type(filename_list))
