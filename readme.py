@@ -9,6 +9,19 @@
 @description：
 """
 import os
+import re
+
+
+# def regex_num(filename_list):
+# 	pattern = re.compile("\d")
+# 	for filename in filename_list:
+# 		content = re.search(pattern, filename, re.S)
+# 	return content
+
+def regex_num(filename_list):
+	# pattern = re.compile("\d")
+	for index, filename in enumerate(filename_list):
+		content = p
 from pprint import pprint
 # ./data/content/100第九十七章 灵轮境后期.md"
 # [100第九十七章 灵轮境后期.md](./data/content/100第九十七章 灵轮境后期.md)
@@ -20,9 +33,12 @@ def readme():
 		for root, file, filename_list in path:
 			# pprint(i)
 			# print(type(filename_list))
-			filename_list.sort()
+			# filename_list.sort()
+			# filename = sorted(filename_list)
 			# print(filelist)
-			for file in filename_list:
+			r = regex_num(filename_list)
+			for file in r:
+			# for file in filename_list:
 				r = os.path.join(root, file)
 				print(r)
 				f.write(f"[{file}]({r})\n\n")
