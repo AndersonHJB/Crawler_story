@@ -96,7 +96,7 @@ def main():
 		# print(i)
 		content_old = i.get("content_text", "default_content")
 		content = content_old.split("。")
-		page_title = i.get('detail_content_title', 'default_name').replace(" ", "")
+		page_title = i.get('detail_content_title', 'default_name').replace(" ", "").replace("【", "").replace("】", "")
 		for con in content:
 			# save(con + "。\n", f"data/content/{f'{index+1}' + i.get('detail_content_title', 'default_name')}.md")
 			save(con + "。\n", f"data/content/{index+1}{page_title}.md")

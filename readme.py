@@ -19,9 +19,16 @@ import re
 # 	return content
 
 def regex_num(filename_list):
+	sort_lst = []
 	# pattern = re.compile("\d")
 	for index, filename in enumerate(filename_list):
-		content = p
+		print(filename)
+		# if filename.startswith(f"{index+1}"):
+		if str(index+1) in filename:
+			sort_lst.append(filename)
+		else:
+			pass
+	return sort_lst
 from pprint import pprint
 # ./data/content/100第九十七章 灵轮境后期.md"
 # [100第九十七章 灵轮境后期.md](./data/content/100第九十七章 灵轮境后期.md)
@@ -37,11 +44,12 @@ def readme():
 			# filename = sorted(filename_list)
 			# print(filelist)
 			r = regex_num(filename_list)
-			for file in r:
-			# for file in filename_list:
-				r = os.path.join(root, file)
-				print(r)
-				f.write(f"[{file}]({r})\n\n")
+			print(r)
+			# for file in r:
+			# # for file in filename_list:
+			# 	r = os.path.join(root, file)
+			# 	print(r)
+			# 	f.write(f"[{file}]({r})\n\n")
 	# with open()
 
 if __name__ == "__main__":
